@@ -1,4 +1,635 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Prime Autonomous Trading</title><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded" rel="stylesheet"><style>:root{--bg:#0B0F19;--surface:#111827;--surface2:#1F2937;--primary:#4285F4;--ai:#00A8FF;--purple:#A855F7;--green:#34A853;--gold:#FBBC04;--red:#EA4335;--text:#FFFFFF;--muted:#9CA3AF;--border:#273244}*{margin:0;padding:0;box-sizing:border-box;font-family:Inter,sans-serif}body{background:radial-gradient(circle at top,#172554,#0b0f19 45%);color:var(--text);min-height:100vh}.app{max-width:430px;margin:auto;padding-bottom:90px}.material-symbols-rounded{font-size:24px;vertical-align:middle}.header{display:flex;justify-content:space-between;align-items:center;padding:20px}.logo{font-size:20px;font-weight:900}.logo span{color:var(--ai)}.subtitle{font-size:12px;color:var(--muted);margin-top:5px}.profile{width:45px;height:45px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,var(--primary),var(--ai));font-weight:800}.card{margin:15px;padding:20px;border-radius:24px;background:linear-gradient(145deg,rgba(255,255,255,.08),rgba(255,255,255,.03));border:1px solid var(--border);box-shadow:0 20px 50px rgba(0,0,0,.35)}.portfolio{background:linear-gradient(135deg,rgba(66,133,244,.35),rgba(0,168,255,.15))}.label{font-size:13px;color:var(--muted)}.balance{font-size:38px;font-weight:900;margin:12px 0}.gain{color:var(--green);font-weight:700}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.stat{background:rgba(255,255,255,.05);border-radius:18px;padding:15px}.stat strong{display:block;font-size:18px}.stat small{color:var(--muted);font-size:11px}.ai-header{display:flex;justify-content:space-between;align-items:center}.ai-status{background:rgba(52,168,83,.15);color:var(--green);padding:7px 12px;border-radius:20px;font-size:12px;font-weight:700}.progress{height:10px;background:#020617;border-radius:20px;overflow:hidden;margin:15px 0}.progress div{height:100%;width:96%;background:linear-gradient(90deg,var(--ai),var(--purple))}.actions{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;padding:15px}.action{background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:14px 5px;text-align:center;font-size:12px;cursor:pointer}.action:hover{border-color:var(--ai)}.action .material-symbols-rounded{color:var(--ai)}.btn{width:100%;padding:15px;border:none;border-radius:18px;background:linear-gradient(90deg,var(--primary),var(--ai));color:#fff;font-weight:800;font-size:15px;cursor:pointer}.row{display:flex;justify-content:space-between;align-items:center;margin:12px 0}input,select{width:100%;padding:15px;margin:10px 0;background:#020617;border:1px solid var(--border);border-radius:15px;color:#fff;font-size:15px;outline:0}.page{display:none}.page.active{display:block}.bottom-nav{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:430px;height:75px;background:#0b0f19;border-top:1px solid var(--border);display:flex;justify-content:space-around;align-items:center;z-index:99}.nav{text-align:center;font-size:11px;color:var(--muted);cursor:pointer}.nav .material-symbols-rounded{font-size:24px}.nav.active{color:var(--ai)}</style></head><body><div class="app"><section id="home" class="page active"><header class="header"><div><div class="logo">PRIME<span>AUTONOMOUS</span></div><div class="subtitle">AI Trading Intelligence Platform</div></div><div class="profile">PAT</div></header><div class="card portfolio"><div class="label">Total Portfolio</div><div class="balance" id="portfolioAmount">₱128,450</div><div class="gain"><span class="material-symbols-rounded">trending_up</span>+6.42% Today</div></div><div class="card grid"><div class="stat"><strong>96%</strong><small>AI Accuracy</small></div><div class="stat"><strong>6%</strong><small>Daily Yield</small></div><div class="stat"><strong>25</strong><small>Days Cycle</small></div></div><div class="card"><div class="ai-header"><div><h3><span class="material-symbols-rounded">auto_awesome</span>PAT AI Engine</h3><div class="subtitle">Autonomous Mode Running</div></div><div class="ai-status">ACTIVE</div></div><div class="progress"><div></div></div><div class="subtitle">AI Confidence 96%</div></div><div class="actions"><div class="action" onclick='openPage("trade",this)'><span class="material-symbols-rounded">monitoring</span><div>Trade</div></div><div class="action" onclick='openPage("wallet",this)'><span class="material-symbols-rounded">account_balance_wallet</span><div>Wallet</div></div><div class="action" onclick='openPage("team",this)'><span class="material-symbols-rounded">groups</span><div>Team</div></div><div class="action" onclick='openPage("ai",this)'><span class="material-symbols-rounded">smart_toy</span><div>AI</div></div></div></section><section id="ai" class="page"><header class="header"><div><div class="logo">PAT<span>AI ENGINE</span></div><div class="subtitle">Autonomous intelligence system</div></div><div class="profile">AI</div></header><div class="card portfolio"><div class="label">AI Status</div><div class="balance">ONLINE</div><div class="gain">● Autonomous Trading Active</div></div><div class="card"><h3><span class="material-symbols-rounded">psychology</span>Market Intelligence</h3><br><div class="row"><span>Market Trend</span><strong style="color:#34a853">BULLISH</strong></div><div class="row"><span>AI Confidence</span><strong>96%</strong></div><div class="row"><span>Risk Level</span><strong>LOW</strong></div><div class="row"><span>Strategy</span><strong>Prime Growth AI</strong></div></div></section><section id="trade" class="page"><header class="header"><div><div class="logo">PAT<span>TRADING</span></div><div class="subtitle">Automated investment cycle</div></div><div class="profile">📈</div></header><div class="card"><h3><span class="material-symbols-rounded">rocket_launch</span>Activate Investment</h3><p class="subtitle">Minimum investment ₱500</p><input id="investment" type="number" placeholder="Enter investment amount"><div class="row"><span>Daily Income (6%)</span><strong id="daily">₱0</strong></div><div class="row"><span>25 Day Return</span><strong id="total">₱0</strong></div><button class="btn" onclick="calculatePAT()">START AI TRADING</button></div><div class="card"><h3>Active Plan</h3><br><div class="row"><span>Plan</span><strong>Prime Growth</strong></div><div class="row"><span>Duration</span><strong>25 Days</strong></div><div class="row"><span>Daily Return</span><strong style="color:#34a853">6%</strong></div></div></section><section id="wallet" class="page"><header class="header"><div><div class="logo">PAT<span>WALLET</span></div><div class="subtitle">Secure financial center</div></div><div class="profile">💰</div></header><div class="card portfolio"><div class="label">Available Balance</div><div class="balance">₱45,800</div><div class="gain">Ready for withdrawal</div></div><div class="card grid"><div class="stat"><strong>₱25K</strong><small>Investment</small></div><div class="stat"><strong>₱12K</strong><small>Profit</small></div><div class="stat"><strong>₱8K</strong><small>Bonus</small></div></div><div class="card"><h3><span class="material-symbols-rounded">add_circle</span>Deposit</h3><p class="subtitle">Minimum ₱500</p><input type="number" placeholder="Deposit amount"><select><option>Payment Method</option><option>Bank Transfer</option><option>E-Wallet</option><option>Crypto</option></select><button class="btn">CONFIRM DEPOSIT</button></div><div class="card"><h3><span class="material-symbols-rounded">payments</span>Withdraw</h3><p class="subtitle">Minimum ₱200</p><input type="number" placeholder="Withdrawal amount"><div class="row"><span>Processing</span><strong style="color:#34a853">Instant ⚡</strong></div><button class="btn">REQUEST WITHDRAWAL</button></div><div class="card"><h3>Transaction History</h3><br><div class="row"><span>AI Profit</span><strong style="color:#34a853">+₱300</strong></div><div class="row"><span>Referral Bonus</span><strong style="color:#34a853">+₱100</strong></div><div class="row"><span>Withdrawal</span><strong style="color:#ea4335">-₱500</strong></div></div></section><section id="team" class="page"><header class="header"><div><div class="logo">PAT<span>NETWORK</span></div><div class="subtitle">Referral and leadership</div></div><div class="profile">👥</div></header><div class="card portfolio"><div class="label">Team Earnings</div><div class="balance">₱18,500</div><div class="gain">Network Growing</div></div><div class="card"><h3><span class="material-symbols-rounded">share</span>Referral Levels</h3><br><div class="row"><span>Level 1</span><strong>5%</strong></div><div class="row"><span>Level 2</span><strong>3%</strong></div><div class="row"><span>Level 3</span><strong>2%</strong></div><div class="row"><span>Level 4</span><strong>1%</strong></div><div class="row"><span>Level 5</span><strong>1%</strong></div></div><div class="card"><h3>🏆 Leadership Bonus</h3><br><div class="row"><span>Rank</span><strong>Diamond</strong></div><div class="row"><span>Bonus</span><strong style="color:#fbbc04">₱5,000</strong></div></div></section><section id="profile" class="page"><header class="header"><div><div class="logo">PAT<span>ACCOUNT</span></div><div class="subtitle">User settings</div></div><div class="profile">JD</div></header><div class="card portfolio"><h2>John Doe</h2><div class="subtitle">Prime Autonomous Trader</div><br><div class="ai-status">VERIFIED MEMBER</div></div><div class="card"><div class="row"><span><span class="material-symbols-rounded">person</span>Profile Details</span><strong>›</strong></div><div class="row"><span><span class="material-symbols-rounded">security</span>Security</span><strong>›</strong></div><div class="row"><span><span class="material-symbols-rounded">verified</span>KYC Verification</span><strong style="color:#34a853">✓</strong></div><div class="row"><span><span class="material-symbols-rounded">support_agent</span>Support</span><strong>›</strong></div></div></section></div><nav class="bottom-nav"><div class="nav active" onclick='openPage("home",this)'><span class="material-symbols-rounded">home</span><div>Home</div></div><div class="nav" onclick='openPage("ai",this)'><span class="material-symbols-rounded">smart_toy</span><div>AI</div></div><div class="nav" onclick='openPage("trade",this)'><span class="material-symbols-rounded">monitoring</span><div>Trade</div></div><div class="nav" onclick='openPage("wallet",this)'><span class="material-symbols-rounded">account_balance_wallet</span><div>Wallet</div></div><div class="nav" onclick='openPage("profile",this)'><span class="material-symbols-rounded">person</span><div>Profile</div></div></nav><script>/*
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prime Autonomous Trading</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded" rel="stylesheet">
+  <style>
+   :root {
+    --bg: #0B0F19;
+    --surface: #111827;
+    --surface2: #1F2937;
+    --primary: #4285F4;
+    --ai: #00A8FF;
+    --purple: #A855F7;
+    --green: #34A853;
+    --gold: #FBBC04;
+    --red: #EA4335;
+    --text: #FFFFFF;
+    --muted: #9CA3AF;
+    --border: #273244;
+   }
+
+   * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+   }
+
+   body {
+    background:
+     radial-gradient(circle at top,
+      #172554,
+      #0B0F19 45%);
+    color: var(--text);
+    min-height: 100vh;
+   }
+
+   .app {
+    max-width: 430px;
+    margin: auto;
+    padding-bottom: 90px;
+   }
+
+   .material-symbols-rounded {
+    font-size: 24px;
+    vertical-align: middle;
+   }
+
+   /* HEADER */
+   .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+   }
+
+   .logo {
+    font-size: 20px;
+    font-weight: 900;
+   }
+
+   .logo span {
+    color: var(--ai);
+   }
+
+   .subtitle {
+    font-size: 12px;
+    color: var(--muted);
+    margin-top: 5px;
+   }
+
+   .profile {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background:
+     linear-gradient(135deg,
+      var(--primary),
+      var(--ai));
+    font-weight: 800;
+   }
+
+   /* CARDS */
+   .card {
+    margin: 15px;
+    padding: 20px;
+    border-radius: 24px;
+    background:
+     linear-gradient(145deg,
+      rgba(255, 255, 255, .08),
+      rgba(255, 255, 255, .03));
+    border:
+     1px solid var(--border);
+    box-shadow:
+     0 20px 50px rgba(0, 0, 0, .35);
+   }
+
+   /* PORTFOLIO */
+   .portfolio {
+    background:
+     linear-gradient(135deg,
+      rgba(66, 133, 244, .35),
+      rgba(0, 168, 255, .15));
+   }
+
+   .label {
+    font-size: 13px;
+    color: var(--muted);
+   }
+
+   .balance {
+    font-size: 38px;
+    font-weight: 900;
+    margin: 12px 0;
+   }
+
+   .gain {
+    color: var(--green);
+    font-weight: 700;
+   }
+
+   /* STAT GRID */
+   .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+   }
+
+   .stat {
+    background:
+     rgba(255, 255, 255, .05);
+    border-radius: 18px;
+    padding: 15px;
+   }
+
+   .stat strong {
+    display: block;
+    font-size: 18px;
+   }
+
+   .stat small {
+    color: var(--muted);
+    font-size: 11px;
+   }
+
+   /* AI ENGINE */
+   .ai-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+   }
+
+   .ai-status {
+    background:
+     rgba(52, 168, 83, .15);
+    color: var(--green);
+    padding: 7px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+   }
+
+   .progress {
+    height: 10px;
+    background: #020617;
+    border-radius: 20px;
+    overflow: hidden;
+    margin: 15px 0;
+   }
+
+   .progress div {
+    height: 100%;
+    width: 96%;
+    background:
+     linear-gradient(90deg,
+      var(--ai),
+      var(--purple));
+   }
+
+   /* ACTIONS */
+   .actions {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    padding: 15px;
+   }
+
+   .action {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 14px 5px;
+    text-align: center;
+    font-size: 12px;
+    cursor: pointer;
+   }
+
+   .action:hover {
+    border-color: var(--ai);
+   }
+
+   .action .material-symbols-rounded {
+    color: var(--ai);
+   }
+
+   /* BUTTON */
+   .btn {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 18px;
+    background:
+     linear-gradient(90deg,
+      var(--primary),
+      var(--ai));
+    color: white;
+    font-weight: 800;
+    font-size: 15px;
+    cursor: pointer;
+   }
+
+   /* ROW */
+   .row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 12px 0;
+   }
+
+   /* INPUT */
+   input,
+   select {
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0;
+    background: #020617;
+    border: 1px solid var(--border);
+    border-radius: 15px;
+    color: white;
+    font-size: 15px;
+    outline: none;
+   }
+
+   /* PAGE */
+   .page {
+    display: none;
+   }
+
+   .page.active {
+    display: block;
+   }
+
+   /* NAV */
+   .bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 430px;
+    height: 75px;
+    background: #0B0F19;
+    border-top: 1px solid var(--border);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 99;
+   }
+
+   .nav {
+    text-align: center;
+    font-size: 11px;
+    color: var(--muted);
+    cursor: pointer;
+   }
+
+   .nav .material-symbols-rounded {
+    font-size: 24px;
+   }
+
+   .nav.active {
+    color: var(--ai);
+   }
+  </style>
+ </head>
+ <body>
+  <div class="app">
+   <section id="home" class="page active">
+    <header class="header">
+     <div>
+      <div class="logo"> PRIME <span>AUTONOMOUS</span>
+      </div>
+      <div class="subtitle"> AI Trading Intelligence Platform </div>
+     </div>
+     <div class="profile"> PAT </div>
+    </header>
+    <div class="card portfolio">
+     <div class="label"> Total Portfolio </div>
+     <div class="balance" id="portfolioAmount"></div>
+     <div class="gain">
+      <span class="material-symbols-rounded"> trending_up </span> +6.42% Today
+     </div>
+    </div>
+    <div class="card grid">
+     <div class="stat">
+      <strong> 96% </strong>
+      <small> AI Accuracy </small>
+     </div>
+     <div class="stat">
+      <strong> 6% </strong>
+      <small> Daily Yield </small>
+     </div>
+     <div class="stat">
+      <strong> 25 </strong>
+      <small> Days Cycle </small>
+     </div>
+    </div>
+    <div class="card">
+     <div class="ai-header">
+      <div>
+       <h3>
+        <span class="material-symbols-rounded"> auto_awesome </span> PAT AI Engine
+       </h3>
+       <div class="subtitle"> Autonomous Mode Running </div>
+      </div>
+      <div class="ai-status"> ACTIVE </div>
+     </div>
+     <div class="progress">
+      <div></div>
+     </div>
+     <div class="subtitle"> AI Confidence 96% </div>
+    </div>
+    <!-- PART 2 STARTS HERE -->
+    <!-- QUICK ACTIONS -->
+    <div class="actions">
+     <div class="action" onclick="openPage('trade',this)">
+      <span class="material-symbols-rounded"> monitoring </span>
+      <div> Trade </div>
+     </div>
+     <div class="action" onclick="openPage('wallet',this)">
+      <span class="material-symbols-rounded"> account_balance_wallet </span>
+      <div> Wallet </div>
+     </div>
+     <div class="action" onclick="openPage('team',this)">
+      <span class="material-symbols-rounded"> groups </span>
+      <div> Team </div>
+     </div>
+     <div class="action" onclick="openPage('ai',this)">
+      <span class="material-symbols-rounded"> smart_toy </span>
+      <div> AI </div>
+     </div>
+    </div>
+   </section>
+   <!-- AI PAGE -->
+   <section id="ai" class="page">
+    <header class="header">
+     <div>
+      <div class="logo"> PAT <span>AI ENGINE</span>
+      </div>
+      <div class="subtitle"> Autonomous intelligence system </div>
+     </div>
+     <div class="profile"> AI </div>
+    </header>
+    <div class="card portfolio">
+     <div class="label"> AI Status </div>
+     <div class="balance"> ONLINE </div>
+     <div class="gain"> ● Autonomous Trading Active </div>
+    </div>
+    <div class="card">
+     <h3>
+      <span class="material-symbols-rounded"> psychology </span> Market Intelligence
+     </h3>
+     <br>
+     <div class="row">
+      <span> Market Trend </span>
+      <strong style="color:#34A853"> BULLISH </strong>
+     </div>
+     <div class="row">
+      <span> AI Confidence </span>
+      <strong> 96% </strong>
+     </div>
+     <div class="row">
+      <span> Risk Level </span>
+      <strong> LOW </strong>
+     </div>
+     <div class="row">
+      <span> Strategy </span>
+      <strong> Prime Growth AI </strong>
+     </div>
+    </div>
+   </section>
+   <!-- TRADING PAGE -->
+   <section id="trade" class="page">
+    <header class="header">
+     <div>
+      <div class="logo"> PAT <span>TRADING</span>
+      </div>
+      <div class="subtitle"> Automated investment cycle </div>
+     </div>
+     <div class="profile"> 📈 </div>
+    </header>
+    <div class="card">
+     <h3>
+      <span class="material-symbols-rounded"> rocket_launch </span> Activate Investment
+     </h3>
+     <p class="subtitle"> Minimum investment ₱500 </p>
+     <input id="investment" type="number" placeholder="Enter investment amount">
+     <div class="row">
+      <span> Daily Income (6%) </span>
+      <strong id="daily"> ₱0 </strong>
+     </div>
+     <div class="row">
+      <span> 25 Day Return </span>
+      <strong id="total"> ₱0 </strong>
+     </div>
+     <button class="btn" onclick="calculatePAT()"> START AI TRADING </button>
+    </div>
+    <div class="card">
+     <h3> Active Plan </h3>
+     <br>
+     <div class="row">
+      <span> Plan </span>
+      <strong> Prime Growth </strong>
+     </div>
+     <div class="row">
+      <span> Duration </span>
+      <strong> 25 Days </strong>
+     </div>
+     <div class="row">
+      <span> Daily Return </span>
+      <strong style="color:#34A853"> 6% </strong>
+     </div>
+    </div>
+   </section>
+   <!-- WALLET PAGE -->
+   <section id="wallet" class="page">
+    <header class="header">
+     <div>
+      <div class="logo"> PAT <span>WALLET</span>
+      </div>
+      <div class="subtitle"> Secure financial center </div>
+     </div>
+     <div class="profile"> 💰 </div>
+    </header>
+    <div class="card portfolio">
+     <div class="label"> Available Balance </div>
+     <div class="balance"> ₱38,500 </div>
+     <div class="gain"> Ready for withdrawal </div>
+    </div>
+    <div class="card grid">
+     <div class="stat">
+      <strong> ₱25k</strong>
+      <small> Investment </small>
+     </div>
+     <div class="stat">
+      <strong> ₱7k </strong>
+      <small> Profit </small>
+     </div>
+     <div class="stat">
+      <strong> ₱5k </strong>
+      <small> Bonus </small>
+     </div>
+    </div>
+    <div class="card">
+     <h3>
+      <span class="material-symbols-rounded"> add_circle </span> Deposit
+     </h3>
+     <p class="subtitle"> Minimum ₱500 </p>
+     <input type="number" placeholder="Deposit amount">
+     <select>
+      <option> Payment Method </option>
+      <option> Bank Transfer </option>
+      <option> E-Wallet </option>
+      <option> Crypto </option>
+     </select>
+     <button class="btn"> CONFIRM DEPOSIT </button>
+    </div>
+    <div class="card">
+     <h3>
+      <span class="material-symbols-rounded"> payments </span> Withdraw
+     </h3>
+     <p class="subtitle"> Minimum ₱200 </p>
+     <input type="number" placeholder="Withdrawal amount">
+     <div class="row">
+      <span> Processing </span>
+      <strong style="color:#34A853"> Instant ⚡ </strong>
+     </div>
+     <button class="btn"> REQUEST WITHDRAWAL </button>
+    </div>
+    <div class="card">
+     <h3> Transaction History </h3>
+     <br>
+     <div class="row">
+      <span> AI Profit </span>
+      <strong style="color:#34A853"> +₱7000 </strong>
+     </div>
+     <div class="row">
+      <span> Referral Bonus </span>
+      <strong style="color:#34A853"> +₱5000 </strong>
+     </div>
+     <div class="row">
+      <span> Withdrawal </span>
+      <strong style="color:#EA4335"> ₱0 </strong>
+     </div>
+    </div>
+   </section>
+   <!-- TEAM PAGE -->
+   <section id="team" class="page">
+    <header class="header">
+     <div>
+      <div class="logo"> PAT <span>NETWORK</span>
+      </div>
+      <div class="subtitle"> Referral and leadership </div>
+     </div>
+     <div class="profile"> 👥 </div>
+    </header>
+    <div class="card portfolio">
+     <div class="label"> Team Earnings </div>
+     <div class="balance"> ₱13,000 </div>
+     <div class="gain"> Network Growing </div>
+    </div>
+    <div class="card">
+     <h3>
+      <span class="material-symbols-rounded"> share </span> Referral Levels
+     </h3>
+     <br>
+     <div class="row">
+      <span> Level 1 </span>
+      <strong> 5% </strong>
+     </div>
+     <div class="row">
+      <span> Level 2 </span>
+      <strong> 3% </strong>
+     </div>
+     <div class="row">
+      <span> Level 3 </span>
+      <strong> 2% </strong>
+     </div>
+     <div class="row">
+      <span> Level 4 </span>
+      <strong> 1% </strong>
+     </div>
+     <div class="row">
+      <span> Level 5 </span>
+      <strong> 1% </strong>
+     </div>
+    </div>
+    <div class="card">
+     <h3> 🏆 Leadership Bonus </h3>
+     <br>
+     <div class="row">
+      <span> Rank </span>
+      <strong> Diamond </strong>
+     </div>
+     <div class="row">
+      <span> Bonus </span>
+      <strong style="color:#FBBC04"> ₱5,000 </strong>
+     </div>
+    </div>
+   </section>
+   <!-- PART 3 STARTS HERE -->
+   <!-- PROFILE PAGE -->
+   <section id="profile" class="page">
+    <header class="header">
+     <div>
+      <div class="logo"> PAT <span>ACCOUNT</span>
+      </div>
+      <div class="subtitle"> User settings </div>
+     </div>
+     <div class="profile"> RD </div>
+    </header>
+    <div class="card portfolio">
+     <h2> Reynaldo De Gracia </h2>
+     <div class="subtitle"> Prime Autonomous Trader </div>
+     <br>
+     <div class="ai-status"> VERIFIED MEMBER </div>
+    </div>
+    <div class="card">
+     <div class="row">
+      <span>
+       <span class="material-symbols-rounded"> person </span> Profile Details </span>
+      <strong> › </strong>
+     </div>
+     <div class="row">
+      <span>
+       <span class="material-symbols-rounded"> security </span> Security </span>
+      <strong> › </strong>
+     </div>
+     <div class="row">
+      <span>
+       <span class="material-symbols-rounded"> verified </span> KYC Verification </span>
+      <strong style="color:#34A853"> ✓ </strong>
+     </div>
+     <div class="row">
+      <span>
+       <span class="material-symbols-rounded"> support_agent </span> Support </span>
+      <strong> › </strong>
+     </div>
+    </div>
+   </section>
+  </div>
+  <!-- BOTTOM NAVIGATION -->
+  <nav class="bottom-nav">
+   <div class="nav active" onclick="openPage('home',this)">
+    <span class="material-symbols-rounded"> home </span>
+    <div> Home </div>
+   </div>
+   <div class="nav" onclick="openPage('ai',this)">
+    <span class="material-symbols-rounded"> smart_toy </span>
+    <div> AI </div>
+   </div>
+   <div class="nav" onclick="openPage('trade',this)">
+    <span class="material-symbols-rounded"> monitoring </span>
+    <div> Trade </div>
+   </div>
+   <div class="nav" onclick="openPage('wallet',this)">
+    <span class="material-symbols-rounded"> account_balance_wallet </span>
+    <div> Wallet </div>
+   </div>
+   <div class="nav" onclick="openPage('profile',this)">
+    <span class="material-symbols-rounded"> person </span>
+    <div> Profile </div>
+   </div>
+  </nav>
+  <script>
+   /*
 
 PAGE SWITCHING
 
@@ -75,7 +706,7 @@ PAGE SWITCHING
     let display = document.getElementById("portfolioAmount");
     if (display) {
      let value = 0;
-     let target = 128450;
+     let target = 50000;
      let timer = setInterval(() => {
       value += 3500;
       if (value >= target) {
@@ -85,4 +716,7 @@ PAGE SWITCHING
       display.innerHTML = "₱" + value.toLocaleString();
      }, 20);
     }
-   }</script></body></html>
+   }
+  </script>
+ </body>
+</html>
